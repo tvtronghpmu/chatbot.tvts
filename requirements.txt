@@ -1,0 +1,10 @@
+streamlit
+openai
+python-dotenv
+pandas
+PyMuPDF
+pytesseract
+python-docx
+pillow
+pdfplumber
+python-dotenv
