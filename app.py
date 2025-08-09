@@ -152,7 +152,7 @@ def ask_openai(question, context):
     - Trả lời một cách chính xác, rõ ràng và đi thẳng vào vấn đề.
     - Nếu thông tin không có trong tài liệu, hãy trả lời một cách lịch sự: 'Tôi không tìm thấy thông tin bạn hỏi trong các tài liệu đã được cung cấp. Bạn vui lòng liên hệ phòng tuyển sinh để được hỗ trợ chính xác nhất.'
     - KHÔNG tự bịa đặt thông tin.
-    
+    - Thông tin so sánh liệt kê dưới dạng bảng.
     Dưới đây là toàn bộ thông tin tuyển sinh bạn có:
     ---
     {context}
@@ -189,7 +189,7 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("**Nhóm thực hiện:** Trần Văn Trọng, Nguyễn Thu Hà")
+    st.markdown("**Nhóm thực hiện:** Trần Văn Trọng, Nguyễn Thanh Hà")
    # st.info("Chatbot sử dụng OpenAI API để phân tích dữ liệu và trả lời câu hỏi.")
 
 # Xử lý và lưu trữ context
@@ -259,4 +259,5 @@ if user_input := st.chat_input("Nhập câu hỏi của bạn ở đây..."):
                 message_placeholder.markdown(full_response)
         
         # Thêm câu trả lời vào lịch sử
+
         st.session_state.messages.append({"role": "assistant", "content": full_response})
