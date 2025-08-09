@@ -171,7 +171,7 @@ def ask_openai(question, context):
                 {"role": "user", "content": prompt}
             ],
             max_tokens=1024,  # Tăng giới hạn token để có câu trả lời đầy đủ hơn
-            temperature=0.5   # Giảm temperature để câu trả lời bám sát dữ liệu hơn
+            temperature=0.7   # Giảm temperature để câu trả lời bám sát dữ liệu hơn
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
@@ -261,3 +261,4 @@ if user_input := st.chat_input("Nhập câu hỏi của bạn ở đây..."):
         # Thêm câu trả lời vào lịch sử
 
         st.session_state.messages.append({"role": "assistant", "content": full_response})
+
